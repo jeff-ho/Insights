@@ -48,7 +48,7 @@ const ProfilePage = () => {
   return (
     <section>
       <Profile
-        name="My"
+        name={session?.user.name}
         desc="Welcome to your profile page"
         data={posts}
         handleEdit={handleEdit}

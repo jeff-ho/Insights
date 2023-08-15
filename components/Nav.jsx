@@ -23,11 +23,11 @@ const Nav = () => {
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
-          src="/assets/images/logo.svg"
+          src="/assets/images/Logo.jpeg"
           alt="Logo Image"
-          width={30}
-          height={30}
-          className="object-contain"
+          width={60}
+          height={60}
+          className="object-contain rounded-full"
         />
         <p className="logo_text">Insights</p>
       </Link>
@@ -36,9 +36,13 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
-              Create New Post
+              New Post
             </Link>
-            <button type="button" onClick={signOut} className="outline_btn">
+            <button
+              type="button"
+              onClick={() => signOut({ callbackUrl: "/" })}
+              className="outline_btn"
+            >
               Sign Out
             </button>
             <Link href="/profile">
@@ -101,7 +105,7 @@ const Nav = () => {
                   type="button"
                   onClick={() => {
                     setToggleDropdown(false);
-                    signOut();
+                    signOut({ callbackUrl: "/" });
                   }}
                   className="mt-5 w-full black_btn"
                 >

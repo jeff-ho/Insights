@@ -4,13 +4,16 @@ const Home = () => {
   return (
     <section className="w-full flex-center flex-col">
       <h1 className="head_text text-center">
-        Discover & Share
+        Unlock Creativity
         <br className="max-md:hidden" />
-        <span className="orange_gradient text-center"> AI-Powered Prompts</span>
+        <span className=" text-center text-orange-400">
+          {" "}
+          Your Ultimate Prompt Repository!
+        </span>
       </h1>
       <p className="desc text-center">
-        Insights is an open-source AI prompting toold to create and share
-        creative AI prompts
+        Insights is an open-source AI prompt repository tool to create and share
+        innovative AI prompts
       </p>
       <Feed />
     </section>
