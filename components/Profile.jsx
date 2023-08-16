@@ -7,23 +7,20 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
         <span className="text-orange">{name}</span>
       </h1>
       <p className="desc text-left">{desc}</p>
-      <div className="mt-10 prompt_layout">
-        {data.length ? (
-          data.map((post) => (
+      {data ? (
+        <div className="mt-10 prompt_layout">
+          {data.map((post) => (
             <PromptCard
               key={post._id}
               post={post}
               handleEdit={() => handleEdit && handleEdit(post)}
               handleDelete={() => handleDelete && handleDelete(post)}
             />
-          ))
-        ) : (
-          <p className="desc text-left">
-            Join our community of forward-thinkers and thought leaders who are
-            shaping the future of AI, one prompt at a time.
-          </p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p>Add your first prompt!</p>
+      )}
     </section>
   );
 };

@@ -21,16 +21,23 @@ const Feed = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  const handleTagClick = () => {};
+  const handleTagClick = (tag) => {
+    setSearchText(tag);
+
+    const searchResult = filterPosts(tag);
+
+    setFilteredPosts(searchResult);
+  };
 
   const filterPosts = (searchtext) => {
     let regex = new RegExp(searchtext, "i");
 
-    return posts.filter((post) => {
-      regex.test(post.creator.username) ||
+    return posts.filter(
+      (post) =>
+        regex.test(post.creator.username) ||
         regex.test(post.prompt) ||
-        regex.test(post.tag);
-    });
+        regex.test(post.tag)
+    );
   };
 
   const handleSearchChange = (e) => {
@@ -65,9 +72,9 @@ const Feed = () => {
       </form>
 
       {searchText ? (
-        <PromptCardList data={filteredPosts} handleTagClick={() => {}} />
+        <PromptCardList data={filteredPosts} handleTagClick={handleTagClick} />
       ) : (
-        <PromptCardList data={posts} handleTagClick={() => {}} />
+        <PromptCardList data={posts} handleTagClick={handleTagClick} />
       )}
     </section>
   );
