@@ -17,11 +17,28 @@ const PromptCardList = ({ data, handleTagClick }) => {
 };
 
 const Feed = () => {
-  const [searchText, setSearchText] = useState("");
   const [posts, setPosts] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  const handleTagClick = () => {};
+
+  const filterPosts = (searchtext) => {
+    let regex = new RegExp(searchtext, "i");
+
+    return posts.filter((post) => {
+      regex.test(post.creator.username) ||
+        regex.test(post.prompt) ||
+        regex.test(post.tag);
+    });
+  };
 
   const handleSearchChange = (e) => {
-    e.preventDefault();
+    setSearchText(e.target.value);
+
+    let finalPosts = filterPosts(e.target.value);
+
+    setFilteredPosts(finalPosts);
   };
 
   useEffect(() => {
@@ -41,13 +58,17 @@ const Feed = () => {
           type="text"
           placeholder="Search for a tag or username"
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={handleSearchChange}
           required
           className="search_input peer"
         />
       </form>
 
-      <PromptCardList data={posts} handleTagClick={() => {}} />
+      {searchText ? (
+        <PromptCardList data={filteredPosts} handleTagClick={() => {}} />
+      ) : (
+        <PromptCardList data={posts} handleTagClick={() => {}} />
+      )}
     </section>
   );
 };

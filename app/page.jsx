@@ -8,7 +8,7 @@ const Home = () => {
         <br className="max-md:hidden" />
         <span className=" text-center text-orange-400">
           {" "}
-          Your Ultimate Prompt Repository!
+          Your Ultimate AI Prompt Repository!
         </span>
       </h1>
       <p className="desc text-center">
