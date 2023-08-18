@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### About Insights
 
-## Getting Started
+Insights is a fullstack application used as a ChatGPT prompt repository for users to share and store their own prompts. 
 
-First, run the development server:
+Created using Next.js that leverages Next/Auth and MongoDB.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Example
+<img width="1078" alt="1" src="https://github.com/jeff-ho/Insights/assets/55267263/02ea977a-1e43-40e7-9349-c700c99741b0">
+<img width="1088" alt="2" src="https://github.com/jeff-ho/Insights/assets/55267263/07c80d05-f2ea-4e61-a2f1-db4a84bab2aa">
+<img width="1088" alt="3" src="https://github.com/jeff-ho/Insights/assets/55267263/1176378a-31af-4dec-82c6-797a98694cc1">
+<img width="1090" alt="4" src="https://github.com/jeff-ho/Insights/assets/55267263/35ab9311-50b5-4078-b686-3c76effb0418">
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### How to start
 
-## Learn More
+Git clone the repository. 
 
-To learn more about Next.js, take a look at the following resources:
+NPM init and install necessary dependencies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+run 'npm start' to start the application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
